@@ -38,10 +38,10 @@ fun ScheduleScreen(
     val scheduleList = listOf(
         ScheduleItem("RAPAT PARIPURNA", "WINDAH BASUDARA", "A-14", "08.00 - 10.30"),
         ScheduleItem("RAPAT MBG", "PRAVRORO", "A-14", "08.00 - 10.30"),
-        ScheduleItem("RAPAT BOCIL KEMATIAN", "ILHAM GOD", "A-14", "08.00 - 10.30"),
-        ScheduleItem("RAPAT PARIPURNA", "WINDAH BASUDARA", "A-14", "08.00 - 10.30"),
-        ScheduleItem("RAPAT MBG", "PRAVRORO", "A-14", "08.00 - 10.30"),
-        ScheduleItem("RAPAT BOCIL KEMATIAN", "ILHAM GOD", "A-14", "08.00 - 10.30")
+        ScheduleItem("RAPAT BOCIL KEMATIAN", "TARA DUGONG", "A-14", "08.00 - 10.30"),
+        ScheduleItem("RAPAT SKIBIDI", "JOHNNY G PIRING", "A-14", "08.00 - 10.30"),
+        ScheduleItem("RAPAT RIZZ", "ZU KO WI", "A-14", "08.00 - 10.30"),
+        ScheduleItem("RAPAT GYATT", "CABUZERO DAGUSQUERO", "A-14", "08.00 - 10.30")
     )
 
     Column(modifier = Modifier.padding(16.dp)) {
@@ -50,7 +50,6 @@ fun ScheduleScreen(
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxWidth()
         ) {
-            // Tombol kembali
             IconButton(onClick = { onBackClick() }) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
@@ -67,9 +66,8 @@ fun ScheduleScreen(
                 color = Color(0xFF00A9D6)
             )
 
-            // Tombol-tombol aksi
             Row {
-                IconButton(onClick = { /* Tambah Jadwal */ }) {
+                IconButton(onClick = { }) {
                     Icon(
                         imageVector = Icons.Default.Add,
                         contentDescription = "Tambah Jadwal",
@@ -77,7 +75,7 @@ fun ScheduleScreen(
                     )
                 }
 
-                IconButton(onClick = { /* Edit Jadwal */ }) {
+                IconButton(onClick = { }) {
                     Icon(
                         imageVector = Icons.Default.Edit,
                         contentDescription = "Edit Jadwal",
@@ -85,7 +83,7 @@ fun ScheduleScreen(
                     )
                 }
 
-                IconButton(onClick = { /* Hapus Jadwal */ }) {
+                IconButton(onClick = {  }) {
                     Icon(
                         imageVector = Icons.Default.Delete,
                         contentDescription = "Hapus Jadwal",
@@ -107,7 +105,6 @@ fun ScheduleScreen(
 
     }
 }
-
 
 
 @Composable

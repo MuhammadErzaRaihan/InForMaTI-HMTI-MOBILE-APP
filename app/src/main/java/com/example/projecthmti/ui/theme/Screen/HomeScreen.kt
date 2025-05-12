@@ -90,6 +90,10 @@ fun MainContent(
                 UpcomingEventSection(onAddScheduleClick = onNavigateToSchedule)
                 Spacer(modifier = Modifier.height(80.dp))
             }
+            1 -> {
+                OnlineMemberList()
+                Spacer(modifier = Modifier.height(80.dp))
+            }
             3 -> NotifScreen()
             else -> {
                 //  incase ada konten lain

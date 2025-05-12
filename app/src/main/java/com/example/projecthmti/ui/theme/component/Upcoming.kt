@@ -79,13 +79,12 @@ fun UpcomingEventSection(
 fun UpcomingEventSectionPreview() {
     UpcomingEventSection(
         onAddScheduleClick = {
-            // Ini hanya untuk preview, di implementasi sebenarnya akan berisi navigasi
-            println("Navigate to Schedule screen")
+
         }
     )
 }
 
-// Komponen EventCard dan data class Event tetap sama seperti sebelumnya
+
 @Composable
 fun EventCard(event: Event) {
     Card(

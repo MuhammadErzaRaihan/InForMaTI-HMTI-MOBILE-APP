@@ -1,16 +1,13 @@
 package com.example.projecthmti.ui.theme.Setting
 
 import android.content.res.Configuration
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.DarkMode
 import androidx.compose.material.icons.filled.Language
-import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -24,7 +21,6 @@ import androidx.compose.ui.unit.sp
 import com.example.projecthmti.R
 import java.util.Locale
 
-// Data class untuk menyimpan state pengaturan
 data class AppSettings(
     val isDarkMode: Boolean = false,
     val isIndonesianLanguage: Boolean = true
@@ -75,7 +71,7 @@ fun SettingScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        // Tombol back
+        // back
         IconButton(onClick = { onBackClick() }) {
             Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
         }
@@ -94,7 +90,7 @@ fun SettingScreen(
             }
         )
 
-        //  Mode Gelap
+        //  dark mode
         SettingItem(
             title = stringResource(R.string.theme),
             icon = Icons.Default.DarkMode,

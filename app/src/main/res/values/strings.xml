@@ -32,6 +32,14 @@
     <string name="time">Time</string>
     <string name="email">E-mail</string>
     <string name="out">Log Out</string>
+    <string name="roles">ROLES</string>
+    <string name="sort">Sort</string>
+    <string name="status">STATUS</string>
+    <string name="submit">Submit</string>
+    <string name="already">Already Had Account?</string>
+
+
+
 
 
 

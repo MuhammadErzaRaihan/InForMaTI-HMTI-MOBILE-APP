@@ -3,13 +3,16 @@ package com.example.projecthmti.ui.theme.Screen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,11 +30,11 @@ fun RecoveryScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .background(Color.White)
             .padding(32.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Logo HMTI
         Image(
             painter = painterResource(id = R.drawable.logo_hmti),
             contentDescription = "Logo HMTI",
@@ -40,7 +43,6 @@ fun RecoveryScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Judul App
         Text(
             text = "InForMaTi",
             style = MaterialTheme.typography.headlineMedium,
@@ -53,7 +55,6 @@ fun RecoveryScreen(
             modifier = Modifier.padding(bottom = 32.dp)
         )
 
-        // Title
         Text(
             text = "Pulihkan Akun",
             style = MaterialTheme.typography.headlineSmall,
@@ -63,7 +64,6 @@ fun RecoveryScreen(
                 .padding(bottom = 16.dp)
         )
 
-        // Email Field
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
@@ -75,7 +75,6 @@ fun RecoveryScreen(
             singleLine = true
         )
 
-        // Old Password Field
         OutlinedTextField(
             value = oldPassword,
             onValueChange = { oldPassword = it },
@@ -88,11 +87,10 @@ fun RecoveryScreen(
             visualTransformation = PasswordVisualTransformation()
         )
 
-        // Submit Button
         Button(
             onClick = { onRecoverySubmitted(email, oldPassword) },
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF96D3E3),
+                containerColor = Color(0xFF3FD0FF),
                 contentColor = Color.Black
             ),
             modifier = Modifier
@@ -100,18 +98,17 @@ fun RecoveryScreen(
                 .height(58.dp),
             shape = RoundedCornerShape(12.dp)
         ) {
-            Text("Ajukan", fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.submit), fontWeight = FontWeight.Bold)
         }
 
         Spacer(modifier = Modifier.height(26.dp))
 
-        // Back Button
         TextButton(
             onClick = onBackClick,
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = "Kembali ke Login",
+                text = stringResource(R.string.back_button),
                 color = Color(0xFF8000FF),
                 fontWeight = FontWeight.SemiBold
             )

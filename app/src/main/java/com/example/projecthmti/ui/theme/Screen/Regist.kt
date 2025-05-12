@@ -13,7 +13,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -28,11 +30,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.projecthmti.R
-
 
 
 @Preview(showBackground = true)
@@ -57,9 +59,9 @@ fun RegistScreen(
     var password by remember { mutableStateOf("") }
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())
     ) {
-        // 🔵 Header Section
+
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -101,7 +103,6 @@ fun RegistScreen(
             }
         }
 
-        // ⚪ Form Section
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -109,7 +110,7 @@ fun RegistScreen(
                 .padding(horizontal = 32.dp, vertical = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Form fields remain the same...
+
             OutlinedTextField(
                 value = name,
                 onValueChange = { name = it },
@@ -170,7 +171,6 @@ fun RegistScreen(
             )
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Fixed Register Button
             Button(
                 onClick = {
                     onRegister(name, nim, dob, gender, email, password)
@@ -193,7 +193,7 @@ fun RegistScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                Text(text = "Sudah punya akun? ", color = Color.Black)
+                Text(text = stringResource(R.string.already), color = Color.Black)
                 Text(
                     text = "LOGIN",
                     color = Color(0xFF00C5FD),
@@ -204,3 +204,5 @@ fun RegistScreen(
         }
     }
 }
+
+
